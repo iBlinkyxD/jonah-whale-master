@@ -97,14 +97,6 @@ const BUSINESS_VENTURES: Initiative[] = [
 
   },
   {
-    title: "Node Vision AI",
-    subtitle: "Growth Partner",
-    description: "Synthesizing AI potential with business infrastructure for exponential growth.",
-    image: "/assets/business/node-vision-ai.jpeg",
-    tag: "Technology",
-
-  },
-  {
     title: "Apollo-E",
     subtitle: "Investor",
     description: "Backing high-impact ventures that define the next generation of global impact.",
