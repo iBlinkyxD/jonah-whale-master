@@ -35,8 +35,8 @@
         }
 
         .glass-morphism {
-            background: rgba(8, 12, 24, 0.6);
-            backdrop-filter: blur(24px) saturate(180%);
+            background: rgba(8, 12, 24, 0.75);
+            backdrop-filter: blur(8px);
             border: 1px solid var(--glass-border);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
@@ -59,6 +59,14 @@
 
         .animate-subtle-float {
             animation: subtle-float 15s ease-in-out infinite;
+        }
+
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 60s linear infinite;
         }
 
         @keyframes light-rays {

@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
+        allowedHosts: ['umbellately-duplicative-elodia.ngrok-free.dev'],
       },
       plugins: [react()],
       define: {
