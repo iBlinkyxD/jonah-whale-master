@@ -22,7 +22,7 @@ const AboutModal: React.FC<AboutModalProps> = React.memo(({ isOpen, onClose }) =
         <div className="sm:hidden relative w-full h-44 bg-slate-100 overflow-hidden shrink-0">
           {!imageError ? (
             <img
-              src="/assets/temp.png"
+              src="/assets/jonah-about.png"
               alt="Jonah Portrait"
               onError={() => setImageError(true)}
               className="w-full h-full object-cover object-top"
@@ -60,7 +60,7 @@ const AboutModal: React.FC<AboutModalProps> = React.memo(({ isOpen, onClose }) =
           <div className="relative w-5/12 overflow-hidden bg-slate-100 flex items-center justify-center shrink-0">
             {!imageError ? (
               <img
-                src="/assets/temp.png"
+                src="/assets/jonah-about.png"
                 alt="Jonah Portrait"
                 onError={() => setImageError(true)}
                 className="w-full h-full object-cover object-top"

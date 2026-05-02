@@ -29,7 +29,7 @@ const App: React.FC = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   const menuActions: [string, () => void][] = [
-    ['Company',   () => { setActiveSidebar('company');  closeMenu(); }],
+    ['Companies',   () => { setActiveSidebar('company');  closeMenu(); }],
     ['Courses',  () => { setActiveSidebar('courses'); closeMenu(); }],
     ['Impact',     () => { setIsImpactOpen(true);         closeMenu(); }],
     ['Governance', () => { setIsGovernanceOpen(true);     closeMenu(); }],
@@ -84,7 +84,7 @@ const App: React.FC = () => {
           style={{ top: 'calc(14% + 34vw + 36px)' }}
         >
           <img
-            src="/assets/temp.png"
+            src="/assets/jonah.png"
             alt="Jonah"
             className="w-full h-full object-cover object-top"
             style={{
@@ -165,7 +165,7 @@ const App: React.FC = () => {
         <nav className="flex gap-9">
           {(
             [
-              ['Company',  () => setActiveSidebar('company')],
+              ['Companies',  () => setActiveSidebar('company')],
               ['Courses', () => setActiveSidebar('courses')],
               ['IMPACT',    () => setIsImpactOpen(true)],
               ['GOVERNANCE',() => setIsGovernanceOpen(true)],
@@ -205,15 +205,15 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      {/* Photo + overlaid content — fixed height wrapper so image never resizes */}
-      <div className="absolute bottom-0 left-0 right-0 z-[25]" style={{ height: '720px' }}>
+      {/* Photo + overlaid content — vh-based so it scales consistently across screen sizes */}
+      <div className="absolute bottom-0 left-0 right-0 z-[25]" style={{ height: '78vh' }}>
 
-        {/* Photo — centered, fixed height */}
+        {/* Photo — centered, scales with viewport height */}
         <img
-          src="/assets/temp.png"
+          src="/assets/jonah.png"
           alt="Jonah"
           className="absolute bottom-0 left-1/2 -translate-x-1/2 object-contain object-top pointer-events-none"
-          style={{ height: '820px', filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.35))' }}
+          style={{ height: '78vh', filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.35))' }}
         />
 
         {/* Right tagline */}
