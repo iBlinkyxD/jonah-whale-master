@@ -3,7 +3,7 @@ import CompanySidebar from './components/CompanySidebar';
 import CoursesSidebar from './components/CoursesSidebar';
 import AboutModal from './components/AboutModal';
 import SocialModal from './components/SocialModal';
-import GovernanceModal from './components/GovernanceModal';
+import PartnerModal from './components/PartnerModal';
 import ImpactModal from './components/ImpactModal';
 import MobileMenu from './components/MobileMenu';
 import { Menu, MessageCircle } from 'lucide-react';
@@ -17,7 +17,7 @@ const App: React.FC = () => {
   const [activeSidebar, setActiveSidebar] = useState<'company' | 'courses' | null>(null);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isSocialOpen, setIsSocialOpen] = useState(false);
-  const [isGovernanceOpen, setIsGovernanceOpen] = useState(false);
+  const [isPartnerOpen, setIsPartnerOpen] = useState(false);
   const [isImpactOpen, setIsImpactOpen] = useState(false);
 
   useEffect(() => {
@@ -31,10 +31,11 @@ const App: React.FC = () => {
   const menuActions: [string, () => void][] = [
     ['Companies',   () => { setActiveSidebar('company');  closeMenu(); }],
     ['Courses',  () => { setActiveSidebar('courses'); closeMenu(); }],
+    ['Partners', () => { setIsPartnerOpen(true);     closeMenu(); }],
     ['Impact',     () => { setIsImpactOpen(true);         closeMenu(); }],
-    ['Governance', () => { setIsGovernanceOpen(true);     closeMenu(); }],
     ['About', () => { setIsAboutOpen(true);         closeMenu(); }],
     ['Socials',    () => { setIsSocialOpen(true);       closeMenu(); }],
+    ['Governance',    () => { setIsPartnerOpen(true);       closeMenu(); }],
   ];
 
   /* ─── MOBILE LAYOUT ─────────────────────────────────────────────────── */
@@ -69,7 +70,7 @@ const App: React.FC = () => {
           </div>
           <div
             className="font-black uppercase whitespace-nowrap leading-[0.9] tracking-[-0.03em] mt-1"
-            style={{ fontSize: '24vw', color: 'rgba(59,130,246,0.08)' }}
+            style={{ fontSize: '24vw', color: 'rgba(17,45,110,0.7)', WebkitTextStroke: '0.5px rgba(99,160,255,1)' }}
           >
             WHALE
           </div>
@@ -132,7 +133,7 @@ const App: React.FC = () => {
         <CoursesSidebar isOpen={activeSidebar === 'courses'}  onClose={() => setActiveSidebar(null)} />
         <AboutModal     isOpen={isAboutOpen}     onClose={() => setIsAboutOpen(false)} />
         <SocialModal   isOpen={isSocialOpen}   onClose={() => setIsSocialOpen(false)} />
-        <GovernanceModal isOpen={isGovernanceOpen} onClose={() => setIsGovernanceOpen(false)} />
+        <PartnerModal isOpen={isPartnerOpen} onClose={() => setIsPartnerOpen(false)} />
         <ImpactModal     isOpen={isImpactOpen}     onClose={() => setIsImpactOpen(false)} />
       </div>
     );
@@ -165,10 +166,10 @@ const App: React.FC = () => {
         <nav className="flex gap-9">
           {(
             [
-              ['Companies',  () => setActiveSidebar('company')],
+              ['Organizations',  () => setActiveSidebar('company')],
               ['Courses', () => setActiveSidebar('courses')],
-              ['IMPACT',    () => setIsImpactOpen(true)],
-              ['GOVERNANCE',() => setIsGovernanceOpen(true)],
+              ['Partners',    () => setIsPartnerOpen(true)],
+              ['Impact',() => setIsImpactOpen(true)],
             ] as [string, () => void][]
           ).map(([label, fn]) => (
             <button
@@ -278,7 +279,7 @@ const App: React.FC = () => {
       <CoursesSidebar isOpen={activeSidebar === 'courses'}  onClose={() => setActiveSidebar(null)} />
       <AboutModal     isOpen={isAboutOpen}     onClose={() => setIsAboutOpen(false)} />
       <SocialModal   isOpen={isSocialOpen}   onClose={() => setIsSocialOpen(false)} />
-      <GovernanceModal isOpen={isGovernanceOpen} onClose={() => setIsGovernanceOpen(false)} />
+      <PartnerModal isOpen={isPartnerOpen} onClose={() => setIsPartnerOpen(false)} />
       <ImpactModal     isOpen={isImpactOpen}     onClose={() => setIsImpactOpen(false)} />
     </div>
   );

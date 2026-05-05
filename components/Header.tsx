@@ -3,11 +3,11 @@ import React from 'react';
 import { ShieldAlert, Globe } from 'lucide-react';
 
 interface HeaderProps {
-  onGovernanceClick?: () => void;
+  onPartnerClick?: () => void;
   onImpactClick?: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onGovernanceClick, onImpactClick }) => {
+const Header: React.FC<HeaderProps> = ({ onPartnerClick, onImpactClick }) => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-12 py-8 flex justify-between items-center">
       <div className="flex flex-col">
@@ -35,11 +35,11 @@ const Header: React.FC<HeaderProps> = ({ onGovernanceClick, onImpactClick }) => 
           </button>
 
           <button 
-            onClick={onGovernanceClick}
+            onClick={onPartnerClick}
             className="flex items-center space-x-2 text-blue-400/70 hover:text-blue-400 transition-colors group"
           >
             <ShieldAlert className="w-3.5 h-3.5" />
-            <span>GOVERNANCE</span>
+            <span>PARTNERS</span>
           </button>
         </div>
       </nav>
